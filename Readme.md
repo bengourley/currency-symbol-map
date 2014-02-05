@@ -1,11 +1,6 @@
 # currency-symbol-map
 
-Nest crud-services within [crud-services](http://npm.im/crud-service). Useful if you have any sort of rich
-nested item within your service entities that you want to store within the same object, eg:
-
-- delivery addresses for a customer
-- downloads on an article
-- available sizes of an item of clothing
+A function to lookup the currency symbol for a given currency code"
 
 ## Installation
 
