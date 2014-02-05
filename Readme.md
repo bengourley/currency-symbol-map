@@ -1,6 +1,6 @@
 # currency-symbol-map
 
-A function to lookup the currency symbol for a given currency code"
+A function to lookup the currency symbol for a given currency code
 
 ## Installation
 
@@ -16,4 +16,4 @@ getSymbol('USD') //=> '$'
 getSymbol('NOT A VALID CODE') //=> '?'
 ```
 
-Currency symbols sourced from from ee [xe](http://www.xe.com/symbols.php).
+Currency symbols sourced from from [xe](http://www.xe.com/symbols.php).
