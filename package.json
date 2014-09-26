@@ -1,6 +1,6 @@
 {
   "name": "currency-symbol-map",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A function to lookup the currency symbol for a given currency code",
   "main": "currency-symbol-map.js",
   "scripts": {

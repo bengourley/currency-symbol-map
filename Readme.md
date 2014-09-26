@@ -1,6 +1,6 @@
 # currency-symbol-map
 
-A function to lookup the currency symbol for a given currency code
+A dictionary of currency codes mapped to currency symbols, with support for both amd and commonjs
 
 ## Installation
 
@@ -9,11 +9,12 @@ A function to lookup the currency symbol for a given currency code
 ## Usage
 
 ```js
-var getSymbol = require('currency-symbol-map')
-getSymbol('GBP') //=> '£'
-getSymbol('EUR') //=> '€'
-getSymbol('USD') //=> '$'
-getSymbol('NOT A VALID CODE') //=> '?'
+var map = require('currency-symbol-map');
+
+map["GBP"] //=> '£'
+map["EUR"] //=> '€'
+map["USD"] //=> '$'
+map["NOT A VALID CODE"] //=> undefined
 ```
 
 Currency symbols sourced from from [xe](http://www.xe.com/symbols.php).
