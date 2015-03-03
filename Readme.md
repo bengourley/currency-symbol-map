@@ -16,5 +16,7 @@ getSymbol('USD') //=> '$'
 getSymbol('NOT A VALID CODE') //=> '?'
 ```
 
+## Credits
+
 Currency symbols originally sourced from [xe](http://www.xe.com/symbols.php), but maintained
 and updated by [contributors](https://github.com/bengourley/currency-symbol-map/pulls?q=is%3Apr+is%3Aclosed).
