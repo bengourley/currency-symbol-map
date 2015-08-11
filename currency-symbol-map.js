@@ -1,6 +1,6 @@
 module.exports = mapSymbol
 
-var map = require('./map.json')
+var map = require('./map')
 
 function mapSymbol(currencyCode) {
   if (map.hasOwnProperty(currencyCode)) {
