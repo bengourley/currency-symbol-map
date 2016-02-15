@@ -1,4 +1,5 @@
-{ "ALL": "L"
+module.exports = {
+  "ALL": "L"
 , "AFN": "؋"
 , "ARS": "$"
 , "AWG": "ƒ"
