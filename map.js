@@ -35,7 +35,7 @@ module.exports =
 , "EUR": "€"
 , "FKP": "£"
 , "FJD": "$"
-, "GHC": "¢"
+, "GHC": "₵"
 , "GIP": "£"
 , "GTQ": "Q"
 , "GGP": "£"
