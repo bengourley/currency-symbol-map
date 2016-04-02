@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var mapSymbol = require('./currency-symbol-map');
+var getSymbol = require('./currency-symbol-map');
 var getSymbolFromCurrency = require('./currency-symbol-map').getSymbolFromCurrency;
 var getCurrencyFromSymbol = require('./currency-symbol-map').getCurrencyFromSymbol;
 var symbolCurrencyMap = require('./currency-symbol-map').symbolCurrencyMap;
@@ -21,6 +21,10 @@ describe('currency-symbol-map', function() {
       assert.equal('€', getSymbolFromCurrency('EUR'));
     });
 
+    it('should return undefined when code is non-existent', function() {
+      assert.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'));
+    });
+
   });
 
   describe('getCurrencyFromSymbol()', function() {
@@ -35,6 +39,30 @@ describe('currency-symbol-map', function() {
 
     it('should return EUR when € is provided', function() {
       assert.equal('EUR', getCurrencyFromSymbol('€'));
+    });
+
+    it('should return undefined when symbol is non-existent', function() {
+      assert.equal(undefined, getCurrencyFromSymbol('NON-EXISTENT-SYMBOL'));
+    });
+
+  });
+
+  describe('getSymbol() [deprecated]', function() {
+
+    it('should return $ when USD is provided', function() {
+      assert.equal('$', getSymbol('USD'));
+    });
+
+    it('should return GBP when £ is provided', function() {
+      assert.equal('£', getSymbol('GBP'));
+    });
+
+    it('should return EUR when € is provided', function() {
+      assert.equal('€', getSymbol('EUR'));
+    });
+
+    it('should return ? when code is non-existent', function() {
+      assert.equal('?', getSymbol('NON-EXISTENT-CODE'));
     });
 
   });

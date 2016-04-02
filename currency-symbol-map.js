@@ -25,7 +25,13 @@ function getCurrencyFromSymbol(symbol) {
   }
 }
 
-module.exports = getSymbolFromCurrency; //Backward compatibility
+function getSymbol(currencyCode) {
+  //Deprecated
+  var symbol = getSymbolFromCurrency(currencyCode);
+  return symbol !== undefined ? symbol : '?';
+}
+
+module.exports = getSymbol; //Backward compatibility
 module.exports.getSymbolFromCurrency = getSymbolFromCurrency;
 module.exports.getCurrencyFromSymbol = getCurrencyFromSymbol;
 module.exports.symbolCurrencyMap = symbolCurrencyMap;
