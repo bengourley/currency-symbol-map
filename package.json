@@ -1,10 +1,10 @@
 {
   "name": "currency-symbol-map",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A function to lookup the currency symbol for a given currency code",
   "main": "currency-symbol-map.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha test.js"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
@@ -24,8 +24,5 @@
   },
   "devDependencies": {
     "mocha": "^2.4.5"
-  },
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test.js"
   }
 }
