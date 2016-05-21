@@ -102,7 +102,7 @@ module.exports =
 , "TWD": "NT$"
 , "THB": "฿"
 , "TTD": "TT$"
-, "TRY": ""
+, "TRY": "₺"
 , "TRL": "₤"
 , "TVD": "$"
 , "UGX": "USh"
