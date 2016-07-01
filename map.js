@@ -85,6 +85,7 @@ module.exports =
 , "QAR": "﷼"
 , "RON": "lei"
 , "RUB": "₽"
+, "RMB": "￥"
 , "SHP": "£"
 , "SAR": "﷼"
 , "RSD": "Дин."
