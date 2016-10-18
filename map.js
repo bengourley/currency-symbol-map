@@ -116,4 +116,6 @@ module.exports =
 , "VND": "₫"
 , "YER": "﷼"
 , "ZWD": "Z$"
+, "GEL": "₾"
+, "KZT": "₸"
 }
