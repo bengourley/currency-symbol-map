@@ -9,21 +9,48 @@ var currencySymbolMap = require('./currency-symbol-map').currencySymbolMap;
 describe('currency-symbol-map', function() {
   describe('getSymbolFromCurrency()', function () {
 
-    it('should return $ when USD is provided', function () {
-      assert.equal('$', getSymbolFromCurrency('USD'));
-    });
+    describe('invalid params', function() {
+      it('should return undefined when param is not a string', function () {
+        assert.equal(undefined, getSymbolFromCurrency(1));
+      });
 
-    it('should return £ when GBP is provided', function () {
-      assert.equal('£', getSymbolFromCurrency('GBP'));
-    });
+      it('should return undefined when param is null', function () {
+        assert.equal(undefined, getSymbolFromCurrency(null));
+      });
 
-    it('should return € when EUR is provided', function () {
-      assert.equal('€', getSymbolFromCurrency('EUR'));
-    });
+      it('should return undefined when param is false', function () {
+        assert.equal(undefined, getSymbolFromCurrency(false));
+      });
 
-    it('should return undefined when code is non-existent', function() {
-      assert.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'));
-    });
+      it('should return undefined when param is undefined', function () {
+        assert.equal(undefined, getSymbolFromCurrency());
+      });
+    })
+
+    describe('valid params', function() {
+      it('should return $ when USD is provided', function () {
+        assert.equal('$', getSymbolFromCurrency('USD'));
+      });
+
+      it('should return £ when GBP is provided', function () {
+        assert.equal('£', getSymbolFromCurrency('GBP'));
+      });
+
+      it('should return € when EUR is provided', function () {
+        assert.equal('€', getSymbolFromCurrency('EUR'));
+      });
+
+      it('should return undefined when code is non-existent', function() {
+        assert.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'));
+      });
+
+      describe('allows for lowercase params', function() {
+        it('should return € when EUR is provided', function () {
+          assert.equal('€', getSymbolFromCurrency('eur'));
+        });
+      })
+
+    })
 
   });
 
@@ -48,23 +75,52 @@ describe('currency-symbol-map', function() {
   });
 
   describe('getSymbol() [deprecated]', function() {
+    describe('invalid params', function() {
 
-    it('should return $ when USD is provided', function() {
-      assert.equal('$', getSymbol('USD'));
-    });
+      it('should return undefined when param is not a string', function () {
+        assert.equal(undefined, getSymbol(1));
+      });
 
-    it('should return GBP when £ is provided', function() {
-      assert.equal('£', getSymbol('GBP'));
-    });
+      it('should return undefined when param is null', function () {
+        assert.equal(undefined, getSymbol(null));
+      });
 
-    it('should return EUR when € is provided', function() {
-      assert.equal('€', getSymbol('EUR'));
-    });
+      it('should return undefined when param is false', function () {
+        assert.equal(undefined, getSymbol(false));
+      });
 
-    it('should return ? when code is non-existent', function() {
-      assert.equal('?', getSymbol('NON-EXISTENT-CODE'));
-    });
+      it('should return undefined when param is undefined', function () {
+        assert.equal(undefined, getSymbol());
+      });
 
+    })
+
+    describe('valid params', function() {
+
+      it('should return $ when USD is provided', function() {
+        assert.equal('$', getSymbol('USD'));
+      });
+
+      it('should return £ when GBP is provided', function() {
+        assert.equal('£', getSymbol('GBP'));
+      });
+
+      it('should return € when EUR is provided', function() {
+        assert.equal('€', getSymbol('EUR'));
+      });
+
+      it('should return ? when code is non-existent', function() {
+        assert.equal('?', getSymbol('NON-EXISTENT-CODE'));
+      });
+
+      describe('allows for lowercase params', function() {
+
+        it('should return € when EUR is provided', function () {
+          assert.equal('€', getSymbol('eur'));
+        });
+
+      })
+    })
   });
 });
 

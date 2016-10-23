@@ -10,10 +10,15 @@ for (var key in currencySymbolMap) {
 }
 
 function getSymbolFromCurrency(currencyCode) {
-  if (currencySymbolMap.hasOwnProperty(currencyCode)) {
-    return currencySymbolMap[currencyCode];
-  } else {
+  if (typeof currencyCode !== 'string') {
     return undefined;
+  } else {
+    var code = currencyCode.toUpperCase();
+    if (currencySymbolMap.hasOwnProperty(code)) {
+      return currencySymbolMap[code];
+    } else {
+      return undefined;
+    }
   }
 }
 
@@ -27,8 +32,12 @@ function getCurrencyFromSymbol(symbol) {
 
 function getSymbol(currencyCode) {
   //Deprecated
-  var symbol = getSymbolFromCurrency(currencyCode);
-  return symbol !== undefined ? symbol : '?';
+  if (typeof currencyCode !== 'string') {
+    return undefined;
+  } else {
+    var symbol = getSymbolFromCurrency(currencyCode.toUpperCase());
+    return symbol !== undefined ? symbol : '?';
+  }
 }
 
 module.exports = getSymbol; //Backward compatibility
