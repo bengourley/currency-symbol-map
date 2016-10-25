@@ -1,47 +1,30 @@
 var currencySymbolMap = require('./map');
 
 var symbolCurrencyMap = {};
-for (var key in currencySymbolMap) {
-  if (currencySymbolMap.hasOwnProperty(key)) {
-    var currency = key;
-    var symbol = currencySymbolMap[currency];
-    symbolCurrencyMap[symbol] = currency;
-  }
-}
+Object.keys(currencySymbolMap).forEach(function (key) {
+  symbolCurrencyMap[currencySymbolMap[key]] = key
+})
 
 function getSymbolFromCurrency(currencyCode) {
-  if (typeof currencyCode !== 'string') {
-    return undefined;
-  } else {
-    var code = currencyCode.toUpperCase();
-    if (currencySymbolMap.hasOwnProperty(code)) {
-      return currencySymbolMap[code];
-    } else {
-      return undefined;
-    }
-  }
+  if (typeof currencyCode !== 'string') return undefined
+  var code = currencyCode.toUpperCase();
+  if (!currencySymbolMap.hasOwnProperty(code)) return undefined
+  return currencySymbolMap[code];
 }
 
 function getCurrencyFromSymbol(symbol) {
-  if (symbolCurrencyMap.hasOwnProperty(symbol)) {
-    return symbolCurrencyMap[symbol];
-  } else {
-    return undefined;
-  }
+  if (!symbolCurrencyMap.hasOwnProperty(symbol)) return undefined
+  return symbolCurrencyMap[symbol]
 }
 
 function getSymbol(currencyCode) {
-  //Deprecated
-  if (typeof currencyCode !== 'string') {
-    return undefined;
-  } else {
-    var symbol = getSymbolFromCurrency(currencyCode.toUpperCase());
-    return symbol !== undefined ? symbol : '?';
-  }
+  if (typeof currencyCode !== 'string') return '?'
+  var symbol = getSymbolFromCurrency(currencyCode.toUpperCase())
+  return symbol !== undefined ? symbol : '?'
 }
 
-module.exports = getSymbol; //Backward compatibility
-module.exports.getSymbolFromCurrency = getSymbolFromCurrency;
-module.exports.getCurrencyFromSymbol = getCurrencyFromSymbol;
-module.exports.symbolCurrencyMap = symbolCurrencyMap;
-module.exports.currencySymbolMap = currencySymbolMap;
+module.exports = getSymbol
+module.exports.getSymbolFromCurrency = getSymbolFromCurrency
+module.exports.getCurrencyFromSymbol = getCurrencyFromSymbol
+module.exports.symbolCurrencyMap = symbolCurrencyMap
+module.exports.currencySymbolMap = currencySymbolMap

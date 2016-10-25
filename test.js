@@ -78,19 +78,19 @@ describe('currency-symbol-map', function() {
     describe('invalid params', function() {
 
       it('should return undefined when param is not a string', function () {
-        assert.equal(undefined, getSymbol(1));
+        assert.equal('?', getSymbol(1));
       });
 
       it('should return undefined when param is null', function () {
-        assert.equal(undefined, getSymbol(null));
+        assert.equal('?', getSymbol(null));
       });
 
       it('should return undefined when param is false', function () {
-        assert.equal(undefined, getSymbol(false));
+        assert.equal('?', getSymbol(false));
       });
 
       it('should return undefined when param is undefined', function () {
-        assert.equal(undefined, getSymbol());
+        assert.equal('?', getSymbol());
       });
 
     })

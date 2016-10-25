@@ -47,8 +47,7 @@ var currencySymbolMap = require('currency-symbol-map').currencySymbolMap;
 */
 ```
 
-## Deprecated usage
-Old usage still works, but could be removed in future versions.
+## Shorthand usage
 
 ```js
 var getSymbol = require('currency-symbol-map')
