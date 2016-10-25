@@ -4,7 +4,8 @@
   "description": "A function to lookup the currency symbol for a given currency code",
   "main": "currency-symbol-map.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test.js"
+    "test": "./node_modules/mocha/bin/mocha test.js",
+    "test:watch": "./node_modules/mocha/bin/mocha test.js --watch"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
