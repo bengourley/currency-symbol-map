@@ -161,4 +161,5 @@ module.exports =
 , "YER": "﷼"
 , "ZAR": "R"
 , "ZWD": "Z$"
+, "BTC": "฿"
 }
