@@ -1,6 +1,6 @@
 # currency-symbol-map
 
-A function to lookup the currency symbol for a given currency code and vice versa.
+A function to lookup the currency symbol for a given currency code.
 
 ## Installation
 
@@ -10,57 +10,36 @@ A function to lookup the currency symbol for a given currency code and vice vers
 
 ### Get symbol from currency code
 ```js
-var getSymbolFromCurrency = require('currency-symbol-map').getSymbolFromCurrency;
-getSymbolFromCurrency('GBP'); //=> '£'
-getSymbolFromCurrency('EUR'); //=> '€'
-getSymbolFromCurrency('USD'); //=> '$'
-getSymbolFromCurrency('NOT A VALID CODE'); //=> undefined
+const getSymbolFromCurrency = require('currency-symbol-map')
+getSymbolFromCurrency('GBP') //=> '£'
+getSymbolFromCurrency('EUR') //=> '€'
+getSymbolFromCurrency('USD') //=> '$'
+getSymbolFromCurrency('NOT A VALID CODE') //=> undefined
 ```
 
-### Get currency code from symbol
+### Exposed map for other processing
 ```js
-var getCurrencyFromSymbol = require('currency-symbol-map').getCurrencyFromSymbol;
-getCurrencyFromSymbol('£'); //=> 'GBP'
-getCurrencyFromSymbol('€'); //=> 'EUR'
-getCurrencyFromSymbol('$'); //=> 'USD'
-getCurrencyFromSymbol('NOT A VALID CODE'); //=> undefined
-```
-
-### Exposed maps for other processing
-```js
-var symbolCurrencyMap = require('currency-symbol-map').symbolCurrencyMap;
-/*
+const currencySymbolMap = require('currency-symbol-map/map')
+// =>
 {
-  "$": "USD",
-  "£": "GBP",
-  ...
+ "USD": "$",
+ "GBP": "£",
+ …
 }
-*/
-
-var currencySymbolMap = require('currency-symbol-map').currencySymbolMap;
-/*
-{
-  "USD": "$",
-  "GBP": "£",
-  ...
-}
-*/
-```
-
-## Shorthand usage
-
-```js
-var getSymbol = require('currency-symbol-map')
-getSymbol('GBP') //=> '£'
-getSymbol('EUR') //=> '€'
-getSymbol('USD') //=> '$'
-getSymbol('NOT A VALID CODE') //=> '?'
 ```
 
 ## Tests
 ```bash
 npm test
 ```
+
+## Changelog
+
+### 4.0.0
+- the reverse lookup feature was removed (retrieving currency given a symbol) because
+there is not a deterministic way to do so (i.e. the same symbol is used by multiple currencies).
+- in previous versions, an unsuccessful lookup would return the `'?'` character. It now returns
+`undefined` so that it is up to you how to handle the failure.
 
 ## Credits
 

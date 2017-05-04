@@ -1,157 +1,29 @@
-var assert = require('assert');
+const test = require('tape')
 
-var getSymbol = require('./currency-symbol-map');
-var getSymbolFromCurrency = require('./currency-symbol-map').getSymbolFromCurrency;
-var getCurrencyFromSymbol = require('./currency-symbol-map').getCurrencyFromSymbol;
-var symbolCurrencyMap = require('./currency-symbol-map').symbolCurrencyMap;
-var currencySymbolMap = require('./currency-symbol-map').currencySymbolMap;
+const getSymbolFromCurrency = require('./')
+const currencySymbolMap = require('./map')
 
-describe('currency-symbol-map', function() {
-  describe('getSymbolFromCurrency()', function () {
+test('getSymbolFromCurrency(): valid params', t => {
+  t.equal('$', getSymbolFromCurrency('USD'), 'should return $ when USD is provided')
+  t.equal('£', getSymbolFromCurrency('GBP'), 'should return £ when GBP is provided')
+  t.equal('€', getSymbolFromCurrency('EUR'), 'should return € when EUR is provided')
+  t.equal('€', getSymbolFromCurrency('eur'), 'should return € when eur is provided')
+  t.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'), 'should return undefined when code is non-existent')
+  t.end()
+})
 
-    describe('invalid params', function() {
-      it('should return undefined when param is not a string', function () {
-        assert.equal(undefined, getSymbolFromCurrency(1));
-      });
+test('getSymbolFromCurrency(): invalid params', t => {
+  t.equal(undefined, getSymbolFromCurrency(1), 'should return undefined when param is not a string')
+  t.equal(undefined, getSymbolFromCurrency(null), 'should return undefined when param is null')
+  t.equal(undefined, getSymbolFromCurrency(false), 'should return undefined when param is false')
+  t.equal(undefined, getSymbolFromCurrency(), 'should return undefined when param is undefined')
+  t.end()
+})
 
-      it('should return undefined when param is null', function () {
-        assert.equal(undefined, getSymbolFromCurrency(null));
-      });
-
-      it('should return undefined when param is false', function () {
-        assert.equal(undefined, getSymbolFromCurrency(false));
-      });
-
-      it('should return undefined when param is undefined', function () {
-        assert.equal(undefined, getSymbolFromCurrency());
-      });
-    })
-
-    describe('valid params', function() {
-      it('should return $ when USD is provided', function () {
-        assert.equal('$', getSymbolFromCurrency('USD'));
-      });
-
-      it('should return £ when GBP is provided', function () {
-        assert.equal('£', getSymbolFromCurrency('GBP'));
-      });
-
-      it('should return € when EUR is provided', function () {
-        assert.equal('€', getSymbolFromCurrency('EUR'));
-      });
-
-      it('should return undefined when code is non-existent', function() {
-        assert.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'));
-      });
-
-      describe('allows for lowercase params', function() {
-        it('should return € when EUR is provided', function () {
-          assert.equal('€', getSymbolFromCurrency('eur'));
-        });
-      })
-
-    })
-
-  });
-
-  describe('getCurrencyFromSymbol()', function() {
-
-    it('should return USD when $ is provided', function() {
-      assert.equal('USD', getCurrencyFromSymbol('$'));
-    });
-
-    it('should return GBP when £ is provided', function() {
-      assert.equal('GBP', getCurrencyFromSymbol('£'));
-    });
-
-    it('should return EUR when € is provided', function() {
-      assert.equal('EUR', getCurrencyFromSymbol('€'));
-    });
-
-    it('should return undefined when symbol is non-existent', function() {
-      assert.equal(undefined, getCurrencyFromSymbol('NON-EXISTENT-SYMBOL'));
-    });
-
-  });
-
-  describe('getSymbol() [deprecated]', function() {
-    describe('invalid params', function() {
-
-      it('should return undefined when param is not a string', function () {
-        assert.equal('?', getSymbol(1));
-      });
-
-      it('should return undefined when param is null', function () {
-        assert.equal('?', getSymbol(null));
-      });
-
-      it('should return undefined when param is false', function () {
-        assert.equal('?', getSymbol(false));
-      });
-
-      it('should return undefined when param is undefined', function () {
-        assert.equal('?', getSymbol());
-      });
-
-    })
-
-    describe('valid params', function() {
-
-      it('should return $ when USD is provided', function() {
-        assert.equal('$', getSymbol('USD'));
-      });
-
-      it('should return £ when GBP is provided', function() {
-        assert.equal('£', getSymbol('GBP'));
-      });
-
-      it('should return € when EUR is provided', function() {
-        assert.equal('€', getSymbol('EUR'));
-      });
-
-      it('should return ? when code is non-existent', function() {
-        assert.equal('?', getSymbol('NON-EXISTENT-CODE'));
-      });
-
-      describe('allows for lowercase params', function() {
-
-        it('should return € when EUR is provided', function () {
-          assert.equal('€', getSymbol('eur'));
-        });
-
-      })
-    })
-  });
-});
-
-describe('currency-symbol-map [generated]', function() {
-  describe('getSymbolFromCurrency()', function () {
-
-    var generateTestName = function(symbol, currency) {
-      return "should return " + symbol + " when " + currency + " is provided";
-    };
-
-    for (var symbol in symbolCurrencyMap) {
-      var currency = symbolCurrencyMap[symbol];
-      it.apply(this, [generateTestName(symbol, currency), function() {
-        assert.equal(symbol, getSymbolFromCurrency(currency));
-      }]);
-    }
-
-  });
-
-  describe('getCurrencyFromSymbol()', function() {
-
-    var generateTestName = function(symbol, currency) {
-      return "should return " + currency + " when " + symbol + " is provided";
-    };
-
-    for (var currency in currencySymbolMap) {
-      var symbol = currencySymbolMap[currency];
-      it.apply(this, [generateTestName(symbol, currency), function() {
-        assert.equal(currency, getCurrencyFromSymbol(symbol));
-      }]);
-    }
-
-  });
-});
+test('currency-symbol-map: sanity check every value in map', t => {
+  const currencies = Object.keys(currencySymbolMap)
+  const obj = {}
+  currencies.forEach(code => { obj[code] = getSymbolFromCurrency(code) })
+  t.deepEqual(obj, currencySymbolMap)
+  t.end()
+})
