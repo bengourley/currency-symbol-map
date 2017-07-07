@@ -79,6 +79,7 @@ module.exports = {
   'KMF': 'CF',
   'KPW': '₩',
   'KRW': '₩',
+  'KWD': 'KD',
   'KYD': '$',
   'KZT': '₸',
   'LAK': '₭',
