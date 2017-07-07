@@ -88,6 +88,7 @@ module.exports = {
   'LTC': 'Ł',
   'LTL': 'Lt',
   'LVL': 'Ls',
+  'LYD': 'LD',
   'MAD': 'MAD',
   'MDL': 'lei',
   'MGA': 'Ar',
