@@ -71,6 +71,7 @@ module.exports = {
   'ISK': 'kr',
   'JEP': '£',
   'JMD': 'J$',
+  'JOD': 'JD',
   'JPY': '¥',
   'KES': 'KSh',
   'KGS': 'лв',
