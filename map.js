@@ -2,7 +2,7 @@ module.exports = {
   'AED': 'د.إ',
   'AFN': '؋',
   'ALL': 'L',
-  'AMD': 'AMD',
+  'AMD': '֏',
   'ANG': 'ƒ',
   'AOA': 'Kz',
   'ARS': '$',
