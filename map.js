@@ -99,6 +99,7 @@ module.exports = {
   'MMK': 'K',
   'MNT': '₮',
   'MOP': 'MOP$',
+  'MRO': 'UM',
   'MUR': '₨',
   'MVR': 'Rf',
   'MWK': 'MK',
