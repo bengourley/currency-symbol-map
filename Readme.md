@@ -25,11 +25,12 @@ getSymbolFromCurrency('NOT A VALID CODE') //=> undefined
 ### Exposed map for other processing
 ```js
 // ES5
-const getSymbolFromCurrency = require('currency-symbol-map')
+const currencyToSymbolMap = require('currency-symbol-map/map')
 
 // ES6
-import getSymbolFromCurrency from 'currency-symbol-map'
+import currencyToSymbolMap from 'currency-symbol-map/map'
 
+console.log(currencyToSymbolMap)
 // =>
 {
  "USD": "$",
