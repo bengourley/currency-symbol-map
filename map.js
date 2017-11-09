@@ -8,7 +8,7 @@ module.exports = {
   'ARS': '$',
   'AUD': '$',
   'AWG': 'ƒ',
-  'AZN': 'ман',
+  'AZN': '₼',
   'BAM': 'KM',
   'BBD': '$',
   'BDT': '৳',
