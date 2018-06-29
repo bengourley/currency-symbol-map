@@ -1,10 +1,16 @@
 var currencySymbolMap = require('./map');
 
-module.exports = function getSymbolFromCurrency(currencyCode) {
+function getSymbolFromCurrency(currencyCode) {
   if (typeof currencyCode !== 'string') return undefined;
   var code = currencyCode.toUpperCase();
   if (!currencySymbolMap.hasOwnProperty(code)) return undefined;
   return currencySymbolMap[code];
-};
+}
 
-module.exports.currencySymbolMap = currencySymbolMap;
+function safeGetSymbolFromCurrency(currencyCode) {
+  const symbol = getSymbolFromCurrency(currencyCode);
+  return symbol == null ? currencyCode : symbol;
+}
+
+module.exports.getSymbolFromCurrency = getSymbolFromCurrency;
+module.exports.safeGetSymbolFromCurrency = safeGetSymbolFromCurrency;
