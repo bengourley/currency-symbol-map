@@ -1,10 +1,10 @@
 {
   "name": "currency-symbol-map",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "A function to lookup the currency symbol for a given currency code",
   "main": "currency-symbol-map.js",
   "scripts": {
-    "test": "standard && tape test.js | tap-spec"
+    "test": "tape test.js | tap-spec"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
@@ -23,8 +23,7 @@
     "url": "https://github.com/bengourley/currency-symbol-map/issues"
   },
   "devDependencies": {
-    "standard": "^10.0.3",
-    "tap-spec": "^4.1.1",
+    "tap-spec": "^5.0.0",
     "tape": "^4.8.0"
   }
 }
