@@ -3,6 +3,7 @@
   "version": "4.0.4",
   "description": "A function to lookup the currency symbol for a given currency code",
   "main": "currency-symbol-map.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "standard && tape test.js | tap-spec"
   },
