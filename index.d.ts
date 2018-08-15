@@ -1,3 +1,4 @@
 declare module "currency-symbol-map" {
-  export default function(currencyCode: string): string;
+  function getSymbolFromCurrency(currencyCode: string): string;
+  export default getSymbolFromCurrency;
 }
