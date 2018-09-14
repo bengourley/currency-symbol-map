@@ -161,6 +161,7 @@ module.exports = {
   'UYU': '$U',
   'UZS': 'лв',
   'VEF': 'Bs',
+  'VES': 'Bs.S',
   'VND': '₫',
   'VUV': 'VT',
   'WST': 'WS$',
