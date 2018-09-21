@@ -171,5 +171,6 @@ module.exports = {
   'XPF': '₣',
   'YER': '﷼',
   'ZAR': 'R',
+  'ZMW': 'ZK',
   'ZWD': 'Z$'
 }
