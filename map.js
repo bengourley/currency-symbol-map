@@ -133,7 +133,7 @@ module.exports = {
   'SCR': '₨',
   'SDG': 'ج.س.',
   'SEK': 'kr',
-  'SGD': '$',
+  'SGD': 'S$',
   'SHP': '£',
   'SLL': 'Le',
   'SOS': 'S',
