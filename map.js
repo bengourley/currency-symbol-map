@@ -28,7 +28,7 @@ module.exports = {
   'BZD': 'BZ$',
   'CAD': '$',
   'CDF': 'FC',
-  'CHF': 'CHF',
+  'CHF': 'Fr.',
   'CLP': '$',
   'CNY': '¥',
   'COP': '$',
