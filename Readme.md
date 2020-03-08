@@ -22,19 +22,43 @@ getSymbolFromCurrency('USD') //=> '$'
 getSymbolFromCurrency('NOT A VALID CODE') //=> undefined
 ```
 
+### Get Unicode symbol from currency code
+```js
+// ES5
+const getUTFSymbolFromCurrency = require('currency-symbol-map')
+
+// ES6
+import getUTFSymbolFromCurrency from 'currency-symbol-map'
+
+getUTFSymbolFromCurrency('GBP') //=> '\u00A3'
+getUTFSymbolFromCurrency('EUR') //=> '\u20AC'
+getUTFSymbolFromCurrency('USD') //=> '\u0024'
+getUTFSymbolFromCurrency('NOT A VALID CODE') //=> undefined
+```
+
 ### Exposed map for other processing
 ```js
 // ES5
 const currencyToSymbolMap = require('currency-symbol-map/map')
+const currencyToUTFSymbolMap = require('currency-symbol-map/utfmap')
 
 // ES6
 import currencyToSymbolMap from 'currency-symbol-map/map'
+import currencyToUTFSymbolMap from 'currency-symbol-map/utfmap'
 
 console.log(currencyToSymbolMap)
 // =>
 {
  "USD": "$",
  "GBP": "£",
+ …
+}
+
+console.log(currencyToUTFSymbolMap)
+// =>
+{
+ "USD": "\u0024",
+ "GBP": "\u00A3",
  …
 }
 ```
