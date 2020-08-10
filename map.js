@@ -124,7 +124,7 @@ module.exports = {
   'PYG': 'Gs',
   'QAR': '﷼',
   'RMB': '￥',
-  'RON': 'lei',
+  'RON': 'L',
   'RSD': 'Дин.',
   'RUB': '₽',
   'RWF': 'R₣',
