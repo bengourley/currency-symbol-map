@@ -83,7 +83,7 @@ module.exports = {
   'KRW': '₩',
   'KWD': 'KD',
   'KYD': '$',
-  'KZT': 'лв',
+  'KZT': '₸',
   'LAK': '₭',
   'LBP': '£',
   'LKR': '₨',
