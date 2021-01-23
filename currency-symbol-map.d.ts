@@ -1,2 +1,2 @@
-function getSymbolFromCurrency (currencyCode: string): string | undefined
+declare function getSymbolFromCurrency (currencyCode: string): string | undefined
 export = getSymbolFromCurrency
