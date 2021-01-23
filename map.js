@@ -20,7 +20,7 @@ module.exports = {
   'BOB': '$b',
   'BRL': 'R$',
   'BSD': '$',
-  'BTC': '฿',
+  'BTC': '₿',
   'BTN': 'Nu.',
   'BWP': 'P',
   'BYR': 'Br',
