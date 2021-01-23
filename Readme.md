@@ -46,6 +46,9 @@ npm test
 
 ## Changelog
 
+### 5.0.1
+- upgraded linter and improved code formatting ([#63](https://github.com/bengourley/currency-symbol-map/pull/63))
+
 ### 5.0.0
 - added some missing currencies ([#61](https://github.com/bengourley/currency-symbol-map/pull/61))
 - fixed the BTC symbol ([#50](https://github.com/bengourley/currency-symbol-map/pull/50))
@@ -53,7 +56,6 @@ npm test
 - fixed the SGD symbol ([#55](https://github.com/bengourley/currency-symbol-map/pull/55))
 - added TypeScript typings ([#53](https://github.com/bengourley/currency-symbol-map/pull/53))
 - upgraded test libraries & added extra test cases ([#62](https://github.com/bengourley/currency-symbol-map/pull/62))
-- upgraded linter and improved code formatting ([#63](https://github.com/bengourley/currency-symbol-map/pull/63))
 
 ### 4.0.0
 - the reverse lookup feature was removed (retrieving currency given a symbol) because
