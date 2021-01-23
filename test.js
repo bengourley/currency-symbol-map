@@ -35,3 +35,10 @@ test('currency-symbol-map: no symbols should be missing', t => {
   }
   t.end()
 })
+
+test('currency-symbol-map: codes should be in alphabetical order', t => {
+  const currencies = Object.keys(currencySymbolMap)
+  const sorted = Object.keys(currencySymbolMap).sort((a, b) => a.localeCompare(b))
+  t.deepEqual(currencies, sorted)
+  t.end()
+})
