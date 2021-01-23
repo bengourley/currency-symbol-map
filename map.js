@@ -24,8 +24,8 @@ module.exports = {
   'BTC': '₿',
   'BTN': 'Nu.',
   'BWP': 'P',
-  'BYR': 'Br',
   'BYN': 'Br',
+  'BYR': 'Br',
   'BZD': 'BZ$',
   'CAD': '$',
   'CDF': 'FC',
@@ -182,7 +182,7 @@ module.exports = {
   'XUA': 'XUA',
   'YER': '﷼',
   'ZAR': 'R',
-  'ZWD': 'Z$',
   'ZMW': 'ZK',
+  'ZWD': 'Z$',
   'ZWL': '$'
 }
