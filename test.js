@@ -29,7 +29,7 @@ test('currency-symbol-map: sanity check every value in map', t => {
 })
 
 test('currency-symbol-map: no symbols should be missing', t => {
-  for (let code in currencySymbolMap) {
+  for (const code in currencySymbolMap) {
     t.equal(typeof currencySymbolMap[code], 'string', `Symbol of ${code} should be a string`)
     t.isNotEqual(currencySymbolMap[code], '', `Symbol of ${code} should not be empty`)
   }

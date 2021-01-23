@@ -23,7 +23,7 @@
     "url": "https://github.com/bengourley/currency-symbol-map/issues"
   },
   "devDependencies": {
-    "standard": "^10.0.3",
+    "standard": "^16.0.3",
     "tap-spec": "^5.0.0",
     "tape": "^5.1.1"
   }
