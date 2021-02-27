@@ -2,9 +2,16 @@ var currencySymbolMap = require('./map')
 var currencySymbolUTFMap = require('./utfmap')
 
 module.exports = function getSymbolFromCurrency (currencyCode) {
-  if (typeof currencyCode !== 'string') return undefined
-  var code = currencyCode.toUpperCase()
-  if (!currencySymbolMap.hasOwnProperty(code)) return undefined
+  if (typeof currencyCode !== 'string') {
+    return undefined
+  }
+
+  const code = currencyCode.toUpperCase()
+
+  if (!Object.prototype.hasOwnProperty.call(currencySymbolMap, code)) {
+    return undefined
+  }
+
   return currencySymbolMap[code]
 }
 
