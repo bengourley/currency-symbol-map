@@ -47,7 +47,7 @@ module.exports = {
   DOP: 'RD$',
   DZD: 'دج',
   EEK: 'kr',
-  EGP: '£',
+  EGP: 'E£',
   ERN: 'Nfk',
   ETB: 'Br',
   ETH: 'Ξ',
