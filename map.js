@@ -127,7 +127,7 @@ module.exports = {
   PHP: '₱',
   PKR: '₨',
   PLN: 'zł',
-  PYG: 'Gs',
+  PYG: '₲',
   QAR: '﷼',
   RMB: '￥',
   RON: 'lei',
