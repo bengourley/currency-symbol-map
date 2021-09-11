@@ -164,6 +164,7 @@ module.exports = {
   UAH: '₴',
   UGX: 'USh',
   USD: '$',
+  USN: '$',
   UYI: 'UYI',
   UYU: '$U',
   UYW: 'UYW',
