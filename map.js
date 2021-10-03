@@ -27,7 +27,7 @@ module.exports = {
   BYN: 'Br',
   BYR: 'Br',
   BZD: 'BZ$',
-  CAD: '$',
+  CAD: 'CA$',
   CDF: 'FC',
   CHE: 'CHE',
   CHF: 'CHF',
