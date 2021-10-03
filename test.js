@@ -8,6 +8,7 @@ test('getSymbolFromCurrency(): valid params', t => {
   t.equal('£', getSymbolFromCurrency('GBP'), 'should return £ when GBP is provided')
   t.equal('€', getSymbolFromCurrency('EUR'), 'should return € when EUR is provided')
   t.equal('€', getSymbolFromCurrency('eur'), 'should return € when eur is provided')
+  t.equal('CA$', getSymbolFromCurrency('cad'), 'should return CA$ when cad is provided')
   t.equal(undefined, getSymbolFromCurrency('NON-EXISTENT-CODE'), 'should return undefined when code is non-existent')
   t.end()
 })
