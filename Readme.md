@@ -39,6 +39,17 @@ console.log(currencyToSymbolMap)
 }
 ```
 
+### In the browser
+
+Include the dist via the script tag
+
+```html
+<script src='dist/currency-symbol-map.min.js' />
+<script>
+  window.CurrencySymbolMap.getSymbolFromCurrency('USD') //=> '$'
+</script>
+```
+
 ## Tests
 ```bash
 npm test
