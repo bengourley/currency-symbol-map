@@ -34,6 +34,7 @@ module.exports = {
   CHW: 'CHW',
   CLF: 'CLF',
   CLP: '$',
+  CNH: '¥',
   CNY: '¥',
   COP: '$',
   COU: 'COU',
