@@ -46,6 +46,9 @@ npm test
 
 ## Changelog
 
+### 5.1.0
+- Add CNH Currency mapping: [#82](https://github.com/bengourley/currency-symbol-map/pull/82)
+
 ### 5.0.1
 - upgraded linter and improved code formatting ([#63](https://github.com/bengourley/currency-symbol-map/pull/63))
 
