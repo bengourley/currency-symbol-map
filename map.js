@@ -185,5 +185,6 @@ module.exports = {
   ZAR: 'R',
   ZMW: 'ZK',
   ZWD: 'Z$',
-  ZWL: '$'
+  ZWL: '$',
+  DOGE: 'Ɖ'
 }
