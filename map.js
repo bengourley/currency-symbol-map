@@ -6,7 +6,7 @@ module.exports = {
   ANG: 'ƒ',
   AOA: 'Kz',
   ARS: '$',
-  AUD: '$',
+  AUD: 'AU$',
   AWG: 'ƒ',
   AZN: '₼',
   BAM: 'KM',
