@@ -30,7 +30,7 @@ module.exports = {
   CAD: '$',
   CDF: 'FC',
   CHE: 'CHE',
-  CHF: 'CHF',
+  CHF: '₣',
   CHW: 'CHW',
   CLF: 'CLF',
   CLP: '$',
